@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e7">
+  <meta name="description" content="Choose the milk, drinks and groceries you need and prepare an order request for SP Alheri Store.">
+  <title>Place an order | SP Alheri Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="SP Alheri Store home"><span class="brand-mark">SP</span><span class="brand-name">SP Alheri <span>Store</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="about.html">About us</a><a href="location.html">Location</a><a class="active" href="order.html">Order</a><a class="nav-contact" href="contact.html">Contact us <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero order-hero">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> Your everyday goods, in a few clicks</p>
+      <h1>Build your<br><span>shopping list.</span></h1>
+      <p>Choose the products and quantities you need. We’ll confirm availability and pricing when we get back to you.</p>
+    </section>
+    <section class="order-layout section">
+      <div class="order-catalog">
+        <div class="order-heading">
+          <div><p class="eyebrow">Available favourites</p><h2>Choose your goods</h2></div>
+          <span class="cart-count" data-cart-count>0 items</span>
+        </div>
+        <div class="order-product-grid" data-product-list></div>
+      </div>
+      <aside class="order-summary" aria-labelledby="cart-heading">
+        <div class="cart-heading"><span class="cart-bag" aria-hidden="true">▤</span><h2 id="cart-heading">Your order</h2><span class="cart-count" data-cart-count>0 items</span></div>
+        <div class="cart-items" data-cart-items><p class="cart-empty">Your list is empty for now. Add a few favourites to get started.</p></div>
+        <p class="cart-price-note">No prices shown yet. We’ll confirm current prices and stock with you.</p>
+        <form class="order-form" data-order-form>
+          <label for="order-name">Your name</label>
+          <input id="order-name" name="name" type="text" autocomplete="name" placeholder="How should we address you?" required>
+          <label for="order-contact">Phone number or email</label>
+          <input id="order-contact" name="replyTo" type="text" autocomplete="email" placeholder="Where can we reach you?" required>
+          <label for="order-notes">Anything else? <span>(optional)</span></label>
+          <textarea id="order-notes" name="notes" rows="3" placeholder="Brand preference or other requests"></textarea>
+          <button class="button button-dark order-submit" type="submit">Prepare order request <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="form-note" data-order-status role="status">Automatic email is not configured yet. Add the EmailJS service, public key and two template IDs in script.js before accepting orders.</p>
+        <div class="order-result" data-order-result hidden>
+          <h3>Order request details</h3>
+          <pre data-order-text></pre>
+          <button class="button button-light copy-order" type="button" data-copy-order>Copy order details</button>
+        </div>
+      </aside>
+    </section>
+    <section class="location-note"><span aria-hidden="true">✳</span><p>Prefer to shop in person? <a href="location.html">Visit us at Dawaki Market, Abuja.</a></p></section>
+  </main>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark">SP</span><span class="brand-name">SP Alheri <span>Store</span></span></a><p>Everyday goods, good value.<br>Dawaki Market, Abuja</p>
+    <div class="footer-links"><a href="about.html">Our story</a><a href="location.html">Find us</a><a href="order.html">Order</a><a href="contact.html">Contact</a></div><small>© <span data-year></span> SP Alheri Store</small>
+  </footer>
+</body>
+</html>
